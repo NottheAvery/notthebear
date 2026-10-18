@@ -124,14 +124,6 @@
         min-height:51px;
       }
     </style>
-    <script>
-      const tooltip = document.getElementById('tooltip');
-
-      document.addEventListener('mousemove', (e) => {
-        tooltip.style.left = e.clientX + 'px';
-        tooltip.style.top = e.clientY + 'px';
-      });
-    </script>
   </head>
   <body>
     <div id="tooltip">placeholder</div>
@@ -180,5 +172,13 @@
       <p class="textbox">Days:0</p>
       <button id="retire"></button>
     </div>
+    <script>
+      const tooltip = document.getElementById('tooltip');
+
+      document.addEventListener('mousemove', (e) => {
+        tooltip.style.left = e.clientX + 'px';
+        tooltip.style.top = e.clientY + 'px';
+      });
+    </script>
   </body>
 </html>
