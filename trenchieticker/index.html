@@ -3,6 +3,19 @@
   <head>
     <title>Trenchie Ticker</title>
     <style>
+      #tooltip {
+        position: fixed;
+        top:0;
+        left:0;
+        pointer-events:none;
+        transform:translateY(-100%);
+        width:102px;
+        height:102px;
+        background-color:rgba(128,128,128,0.5);
+        color:white;
+        border-radius:1px;
+        padding:8px;
+        box-sizing:border-box;
       .box {
         position:fixed;
         min-height:20px;
@@ -111,8 +124,17 @@
         min-height:51px;
       }
     </style>
+    <script>
+      const tooltip = document.getElementById('tooltip');
+
+      document.addEventListener('mousemove', (e) => {
+        tooltip.style.left = e.clientX + 'px';
+        tooltip.style.top = e.clientY + 'px';
+      });
+    </script>
   </head>
   <body>
+    <div id="tooltip">placeholder</div>
     <div id="clickbox" class="box">
       <div id="theirtrench"></div>
       <button id="click"></button>
